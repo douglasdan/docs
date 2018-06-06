@@ -85,6 +85,9 @@ Observable.create(new Observable.OnSubscribe<String>() {
         System.out.println("Subscribe Thread "+Thread.currentThread().getName());
     }
 });
+
+//保持进程一段时间，否则可能Subscriber还未执行打印，就退出
+Thread.sleep(100);
 ```
 运行结果：
 ```
